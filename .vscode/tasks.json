@@ -4,16 +4,36 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "build main...",
+            "label": "build main DEBUG",
             "type": "shell",
             "command": "g++",
             "args": [
-                "main.cpp","-o","test"
+                "-g",
+                "main.cpp",
+                "-o",
+                "testd.out"
             ],
             "group": {
                 "kind": "build",
                 "isDefault": true
-            }
+            },
+            "problemMatcher": [
+                "$gcc"
+            ]
+        },
+        {
+            "label": "build main RELEASE",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "main.cpp",
+                "-o",
+                "testr.out"
+            ],
+            "group": "build",
+            "problemMatcher": [
+                "$gcc"
+            ]
         }
     ]
 }
